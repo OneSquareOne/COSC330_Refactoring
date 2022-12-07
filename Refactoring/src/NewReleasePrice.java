@@ -10,4 +10,10 @@ public class NewReleasePrice extends Price {
 		// TODO Auto-generated method stub
 		return 1;
 	}
+
+	@Override
+	public double getCharge(int daysRented) {
+		
+		return daysRented * 3;
+	}
 }

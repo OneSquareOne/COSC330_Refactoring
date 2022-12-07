@@ -10,4 +10,12 @@ public class RegularPrice extends Price{
 		return 0;
 	}
 
+	@Override
+	public double getCharge(int daysRented) {
+		// TODO Auto-generated method stub
+		double rentalPrice = 2;
+		if (daysRented > 2)
+			rentalPrice += (daysRented - 2) * 1.5;
+		return rentalPrice;
+	}
 }
