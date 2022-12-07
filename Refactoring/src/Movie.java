@@ -6,11 +6,11 @@ public class Movie {
     public static final int NEW_RELEASE = 1;
 
     private String title;
-    private int priceCode;
+    private Price moviePrice;
 
     public Movie(String title, int priceCode) {
         this.title = title;
-         this.setPriceCode(priceCode);
+        this.setPriceCode(priceCode);
     }
 
     public String getTitle() {
@@ -18,11 +18,17 @@ public class Movie {
     }
 
     public int getPriceCode() {
-        return priceCode;
+        return moviePrice.getPriceCode();
     }
 
     public void setPriceCode(int priceCode) {
-        this.priceCode = priceCode;
+    	if(priceCode == CHILDREN) {
+    		moviePrice = new ChildrensPrice();
+    	}else if(priceCode == REGULAR) {
+    		moviePrice = new RegularPrice();
+    	}else if(priceCode == NEW_RELEASE) {
+    		moviePrice = new NewReleasePrice();
+    	}
     }
     
     public double getCharge(int daysRented) {
