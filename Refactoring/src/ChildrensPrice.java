@@ -18,5 +18,4 @@ public class ChildrensPrice extends Price {
 			rentalPrice += (daysRented - 3) * 1.5;
 		return rentalPrice;
 	}
-
 }

@@ -1,6 +1,7 @@
 
 public class RegularPrice extends Price{
 
+	
 	public RegularPrice() {
 	}
 
