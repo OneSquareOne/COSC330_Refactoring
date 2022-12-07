@@ -57,4 +57,19 @@ public class Customer {
 		}
 		return frequentRenterPoints;
 	}
+	
+	public String htmlStatement() {
+		String result = "Rental record for " + getName() + "\n";
+		for (Rental rental : rentals) {
+
+			// show figures for this rental
+			result += "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(amountFor(rental)) + "\n";
+		}
+
+		result += "Amount owed is " + String.valueOf(getTotalCharge()) + "\n";
+		result += "You earned " + String.valueOf(getTotalFrequentRentalPoints()) + " frequent renter points";
+
+		return result;
+		
+	}
 }
